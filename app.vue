@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <Suspense>
+  <NuxtLayout>
     <NuxtPage />
-  </Suspense>
+  </NuxtLayout>
 </template>
