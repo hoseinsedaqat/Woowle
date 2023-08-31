@@ -1,26 +1,29 @@
+import { API_KEY, BASE_URL, CX_KEY } from "@/api/index";
+
 import { defineStore } from "pinia";
-import { useRouter } from "vue-router";
+
 import axios from "axios";
-const router = useRouter();
-// https://www.googleapis.com/customsearch/v1?key=AIzaSyCtirkR1A-Lr2J2vpHdFNWGoCkWvGji8sA&cx=91e38a5998bdd43c3&q=${search.value}
 
 export const engine = defineStore("engine", {
   state: () => ({
     project_name: "Woowle I'm Going to Beautiful You",
     search: "",
+    search_data : [],
+    search_loading: false
   }),
-  getters: {},
+  getters: {
+    get_search_data: (state) => state.search_data
+  },
   actions: {
     search_engine() {
-      axios
-        .get(
-          `https://www.googleapis.com/customsearch/v1?key=AIzaSyCtirkR1A-Lr2J2vpHdFNWGoCkWvGji8sA&cx=91e38a5998bdd43c3&q=${this.search}`
-        )
+      this.search_loading = true;
+      axios.get(BASE_URL + '?key=' + API_KEY + '&cx=' + CX_KEY + '&q=' + `${this.search}`)
         .then((response) => {
-          console.log(response.data.items);
+          this.search_data = response.data.items;
+          this.search_loading = false;
         })
         .catch((error) => {
-          console.log(error);
+          throw new Error(error);
         })
         .finally(() => {
           this.search = "";
