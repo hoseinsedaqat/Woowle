@@ -6,7 +6,6 @@ import axios from "axios";
 
 export const engine = defineStore("engine", {
   state: () => ({
-    project_name: "Woowle I'm Going to Beautiful You",
     search: "",
     search_data : [],
     search_loading: false
