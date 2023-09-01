@@ -24,6 +24,7 @@ useHead({
       <input type="text" name="for_search" />
     </div>
   </section>
+  <!-- Search Button -->
   <section id="search__btn">
     <button>Google Search</button>
     <button>I'm Felling Lucky</button>
