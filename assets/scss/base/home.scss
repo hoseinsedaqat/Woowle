@@ -36,7 +36,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 5rem auto;
+    margin: 5rem auto 2rem auto;
 
     .search__bar__logo {
         text-align: center;
@@ -54,6 +54,7 @@ header {
         i {
             color: #000;
             margin: 0 1rem;
+            cursor: pointer;
         }
 
         input {
@@ -68,6 +69,24 @@ header {
         }
     }
 }
+
+#search__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+        font-family: "Open Sans", sans-serif;
+        color: #000000;
+        margin: 0 0.5rem;
+        border: none;
+        padding: 0.5rem 0.7rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+// Responsive
 
 @media screen and (max-width: 500px) {
     .search__bar__input {

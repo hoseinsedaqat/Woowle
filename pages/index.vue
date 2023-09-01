@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+useHead({
+  title: "Woowle",
+});
+</script>
 
 <template>
   <!-- Header -->
@@ -19,5 +23,9 @@
       <i class="bi bi-search"></i>
       <input type="text" name="for_search" />
     </div>
+  </section>
+  <section id="search__btn">
+    <button>Google Search</button>
+    <button>I'm Felling Lucky</button>
   </section>
 </template>
