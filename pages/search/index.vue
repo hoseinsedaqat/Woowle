@@ -1,5 +1,4 @@
 <script setup></script>
-
 <template>
-  <h2>About</h2>
+  <h2>This is Search Page</h2>
 </template>

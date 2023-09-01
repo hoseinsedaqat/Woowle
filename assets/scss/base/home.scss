@@ -1,11 +1,28 @@
-header {
-    width: 100%;
+// mixins
+@mixin flex-center-end {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+@mixin flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-center-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    width: $w-100;
+    @include flex-center-end;
 
     img {
-        cursor: pointer;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -23,7 +40,6 @@ header {
     }
 
     i {
-        cursor: pointer;
         font-size: 20px;
         margin: 0 1rem;
         color: #333;
@@ -32,29 +48,25 @@ header {
 
 #search__bar {
     max-width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include flex-center-center-column;
     margin: 5rem auto 2rem auto;
 
     .search__bar__logo {
         text-align: center;
         img {
             width: 60%;
-            height: 100%;
+            height: $h-100;
         }
     }
 
     .search__bar__input {
-        width: 100%;
+        width: $w-100;
         border: 1px solid #2222;
         border-radius: 20px;
 
         i {
             color: #000;
             margin: 0 1rem;
-            cursor: pointer;
         }
 
         input {
@@ -72,9 +84,7 @@ header {
 
 #search__btn {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center-center;
     button {
         font-family: "Open Sans", sans-serif;
         color: #000000;
@@ -82,12 +92,10 @@ header {
         border: none;
         padding: 0.5rem 0.7rem;
         border-radius: 5px;
-        cursor: pointer;
     }
 }
 
 // Responsive
-
 @media screen and (max-width: 500px) {
     .search__bar__input {
         input {
