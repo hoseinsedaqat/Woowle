@@ -1,4 +1,21 @@
-<script setup></script>
+<script setup>
+// imports
+import { engine } from "@/store/index";
+
+import { useRouter } from "vue-router";
+// data
+const use_engine = engine();
+
+const router = useRouter();
+// methods
+function go_search() {
+  if (use_engine.search === "") {
+    return;
+  } else {
+    router.push("/search");
+  }
+}
+</script>
 
 <template>
   <!-- Header -->
@@ -20,13 +37,19 @@
       <img src="@/assets/images/WoowleLogo.png" alt="Woowle_Logo" />
     </div>
     <div class="search__bar__input">
-      <i class="bi bi-search cursor-pointer"></i>
-      <input type="text" name="for_search" placeholder="Search in Woowle" />
+      <i class="bi bi-search cursor-pointer" @click="go_search()"></i>
+      <input
+        type="text"
+        name="for_search"
+        placeholder="Search in Woowle"
+        v-model="use_engine.search"
+        @keyup.enter="go_search()"
+      />
     </div>
   </section>
   <!-- Search Button -->
   <section id="search__btn">
-    <button class="cursor-pointer">Google Search</button>
+    <button class="cursor-pointer" @click="go_search()">Google Search</button>
     <button class="cursor-pointer">I'm Felling Lucky</button>
   </section>
 </template>

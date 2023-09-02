@@ -1,0 +1,112 @@
+#search__view__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    & main:nth-child(1) {
+        margin: 1rem;
+        img {
+            width: 150px;
+            height: 50px;
+        }
+    }
+    & main:nth-child(2) {
+        width: 60%;
+        border: 1px solid #2222;
+        border-radius: 20px;
+        padding: 0 1rem;
+        margin: -1.3rem 0 0 0;
+        i {
+            color: #000;
+            margin: 0 0.5rem 0 0;
+        }
+        input {
+            width: 90%;
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+            border: none;
+            padding: 0.7rem 0;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+#search__view__options {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    p {
+        border: 1px solid #2222;
+        margin: 0 0.2rem 1rem 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        &:hover {
+            background-color: #1111;
+        }
+    }
+}
+
+#search__view__result {
+    width: 100%;
+    border-top: 1px solid #2222;
+    .search__view__result__information {
+        margin: 1rem 0 0 2rem;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 2rem 2rem 2rem;
+        width: 60%;
+        & div:nth-child(1) {
+            a {
+                text-decoration: none;
+                color: #222;
+                img {
+                    width: 30px;
+                    height: 20px;
+                    margin: 0 0.2rem;
+                }
+                span {
+                    margin: 0 0.2rem;
+                }
+            }
+        }
+        & div:nth-child(2) {
+            a {
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        & div:nth-child(3) {
+            width: 70%;
+        }
+    }
+}
+
+// Responsive
+@media screen and (max-width: 1000px) {
+    #search__view__options {
+        p {
+            display: none;
+        }
+    }
+
+    #search__view__result {
+        margin: 1rem 0 0 0;
+        main{
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #search__view__header {
+        flex-direction: column;
+        & main:nth-child(2) {
+            width: 80%;
+        }
+    }
+}
