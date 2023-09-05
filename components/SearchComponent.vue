@@ -1,5 +1,7 @@
 <script setup>
 // imports
+import SpinnerComponent from "@/components/SpinnerComponent.vue";
+
 import { engine } from "@/store/index";
 
 import { useRouter } from "vue-router";
@@ -95,11 +97,7 @@ onMounted(() => {
       </main>
     </template>
     <template v-else>
-      <main class="spinner__loading">
-        <div>
-          <img src="@/assets/images/SpinnerLoading.gif" alt="Spinner_Loading" />
-        </div>
-      </main>
+      <SpinnerComponent></SpinnerComponent>
     </template>
   </section>
 </template>
