@@ -1,0 +1,31 @@
+#error {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7rem 0 0 0;
+    & main:nth-child(1) {
+        img {
+            width: 150px;
+            height: 50px;
+        }
+
+        p {
+            b {
+                margin: 0 0.2rem 0 0;
+            }
+        }
+
+        span {
+            color: gray;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #error {
+        & main:nth-child(2) {
+            display: none;
+        }
+    }
+}
