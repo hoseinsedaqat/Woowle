@@ -2,6 +2,8 @@
 
 @import "./_size.scss";
 
+@import "./_colors";
+
 @import "./base/home.scss";
 
 @import "./base/search.scss";
@@ -9,7 +11,7 @@
 @import "./base/error.scss";
 
 body {
-    color: #222;
+    color: $text-color;
     font-family: "Open Sans", sans-serif;
 }
 
