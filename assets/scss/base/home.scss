@@ -83,7 +83,7 @@ header {
 }
 
 #search__btn {
-    width: 100%;
+    width: $w-100;
     @include flex-center-center;
     button {
         font-family: "Open Sans", sans-serif;
