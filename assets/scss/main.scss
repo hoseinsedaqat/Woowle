@@ -1,3 +1,4 @@
+// imports
 @import url("https://fonts.googleapis.com/css2?family=Fasthand&family=Open+Sans:wght@300&display=swap");
 
 @import "./_size.scss";
@@ -9,12 +10,11 @@
 @import "./base/search.scss";
 
 @import "./base/error.scss";
-
+// styles
 body {
     color: $text-color;
     font-family: "Open Sans", sans-serif;
 }
-
 // global class
 .cursor-pointer {
     cursor: pointer;

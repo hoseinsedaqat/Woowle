@@ -1,5 +1,7 @@
 <script setup>
 // imports
+import { search_view_options } from "@/constants/search_view_options";
+
 import SpinnerComponent from "@/components/SpinnerComponent.vue";
 
 import { engine } from "@/store/index";
@@ -54,15 +56,7 @@ onMounted(() => {
   </section>
   <!-- Search Options -->
   <section id="search__view__options">
-    <p class="cursor-pointer">Places</p>
-    <p class="cursor-pointer">Images</p>
-    <p class="cursor-pointer">Videos</p>
-    <p class="cursor-pointer">News</p>
-    <p class="cursor-pointer">Maps</p>
-    <p class="cursor-pointer">Products</p>
-    <p class="cursor-pointer">Books</p>
-    <p class="cursor-pointer">Flights</p>
-    <p class="cursor-pointer">Finance</p>
+    <p class="cursor-pointer" v-for="search_options in search_view_options" :key="search_options">{{ search_options }}</p>
   </section>
   <!-- Search Results -->
   <section id="search__view__result">
